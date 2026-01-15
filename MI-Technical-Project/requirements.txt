@@ -1,0 +1,24 @@
+# Python dependencies for MI Reporting Automation Engine
+# Cryptocurrency ETL Pipeline
+
+# Core dependencies
+python-dotenv==1.0.0          # Environment variable management
+requests==2.31.0              # HTTP library for API calls
+pandas==2.2.0                 # Data manipulation and analysis
+
+# Google Cloud Platform
+google-cloud-bigquery==3.14.1  # BigQuery client library
+google-auth==2.26.2           # Google authentication library
+google-auth-oauthlib==1.2.0   # OAuth 2.0 support
+google-auth-httplib2==0.2.0   # HTTP library for Google Auth
+
+# Data processing
+pyarrow==15.0.0               # Required for BigQuery pandas integration
+numpy==1.26.3                 # Numerical computing (pandas dependency)
+
+# Development dependencies (optional, uncomment if needed)
+# pytest==7.4.4               # Testing framework
+# pytest-cov==4.1.0           # Code coverage for tests
+# black==24.1.1               # Code formatter
+# flake8==7.0.0               # Linting
+# mypy==1.8.0                 # Static type checking

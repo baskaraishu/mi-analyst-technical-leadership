@@ -1,0 +1,94 @@
+name: Daily Crypto ETL Pipeline
+
+on:
+  # Schedule: Run daily at 6 AM UTC
+  schedule:
+    - cron: '0 6 * * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run on push to main (for testing)
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/daily_etl.yml'
+
+jobs:
+  etl-pipeline:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      id-token: write  # Required for Workload Identity Federation
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          # Option 1: Use Workload Identity Federation (recommended for production)
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          
+          # Option 2: Use Service Account Key (for development/sandbox)
+          # credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+      
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+      
+      - name: Verify GCP authentication
+        run: |
+          gcloud auth list
+          gcloud config list project
+      
+      - name: Run ETL Pipeline
+        env:
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          BQ_DATASET: ${{ secrets.BQ_DATASET || 'crypto_analytics' }}
+          BQ_TABLE: ${{ secrets.BQ_TABLE || 'crypto_prices' }}
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          CRYPTO_IDS: ${{ secrets.CRYPTO_IDS || 'bitcoin,ethereum,cardano,solana,polkadot' }}
+          MIN_RECORDS_THRESHOLD: ${{ secrets.MIN_RECORDS_THRESHOLD || '1' }}
+          MAX_NULL_PERCENTAGE: ${{ secrets.MAX_NULL_PERCENTAGE || '10.0' }}
+          LOG_LEVEL: INFO
+        working-directory: ./src
+        run: |
+          python main.py
+      
+      - name: Upload pipeline logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etl-logs-${{ github.run_number }}
+          path: src/etl_pipeline.log
+          retention-days: 30
+      
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "ETL Pipeline failed. Check the logs for details."
+          echo "Run number: ${{ github.run_number }}"
+          echo "Triggered by: ${{ github.event_name }}"
+      
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "✓ ETL Pipeline completed successfully"
+          echo "Data loaded to BigQuery at $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
