@@ -1,3 +1,6 @@
+# [![Portfolio](https://img.shields.io/badge/Portfolio-MI%20Leadership-blueviolet?style=for-the-badge)](/)
+# [![Open Source](https://img.shields.io/badge/Open-Source-brightgreen?style=flat-square)](/)
+# ![Gen AI](https://img.shields.io/badge/Gen_AI-Powered-ff69b4?style=flat-square&logo=openai)
 # mi-analyst-technical-leadership – How to Use This Repository
 
 Welcome! This repository is designed as a **comprehensive MI (Management Information) Analyst technical and leadership portfolio**. It demonstrates hands-on data engineering, analytics automation, and strategic MI/BI leadership.

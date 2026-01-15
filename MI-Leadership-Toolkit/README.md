@@ -1,3 +1,7 @@
+# ![Data Analytics](https://img.shields.io/badge/Data_Analytics-Expert-2ea44f?style=flat-square&logo=databricks)
+# ![Data Governance](https://img.shields.io/badge/Data_Governance-Champion-007ec6?style=flat-square&logo=azuredevops)
+# ![Stakeholder Management](https://img.shields.io/badge/Stakeholder_Management-Leadership-orange?style=flat-square&logo=teams)
+# ![Business Value](https://img.shields.io/badge/Business_Value-Driven-ffb300?style=flat-square&logo=googleanalytics)
 # mi-analyst-technical-leadership – Leadership Toolkit
 
 The **MI Leadership Toolkit** showcases capabilities beyond technical ETL and dashboards. It demonstrates how you approach **data governance, stakeholder management, data quality, and business value** as a senior MI / Analytics leader.
