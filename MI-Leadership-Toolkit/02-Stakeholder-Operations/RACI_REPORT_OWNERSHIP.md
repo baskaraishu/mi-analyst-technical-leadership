@@ -1,6 +1,6 @@
 # Stakeholder RACI Matrix Template: Report Ownership
 
-> **Status:** Reusable template. Roles and assignments are illustrative for the synthetic-data project; they are not an MoJ/HMPPS organisation chart. Agree real roles with the service before use.
+> **Status:** Reusable, implementation-neutral template. Roles and assignments are illustrative; they are not an MoJ/HMPPS organisation chart. Agree real roles with the service before use. Evidence fields are placeholders: map them to your pipeline's own artefacts (for `MI-Technical-Project`: run logs, the data-quality report, `src/config.py` thresholds and the BigQuery destination table).
 
 Clear ownership prevents a report being trusted by many and owned by no one. Use one RACI per report or data product.
 
@@ -18,9 +18,9 @@ Rule: exactly **one A** per row; at least one **R**.
 | Purpose and decision supported | |
 | Intended audience | |
 | Frequency and publication date | |
-| Source data and Gold output | |
-| KPI definitions reference | `rules/kpi_mappings.yml`, `docs/data_dictionary.md` |
-| Release control | `rules/quality_gate.yml` decision recorded in `quality_gate.json` |
+| Source data and published output | e.g., source feed and destination table |
+| KPI definitions reference | e.g., data dictionary or KPI definition document |
+| Release control | e.g., quality-check configuration and recorded pass/fail decision |
 | Review date | |
 
 ## 2. Roles
@@ -49,8 +49,13 @@ Rule: exactly **one A** per row; at least one **R**.
 | Review KPIs and exceptions | I | I | R | C | I | A | I |
 | Decide operational follow-up | C | I | C | I | I | A | I |
 | Publish and communicate report | A | I | R | C | I | I | C |
-| Approve changes (see change log) | A | C | R | R | C | C | C |
-| Retire the report (see playbook) | A | C | R | R | C | C | C |
+| Approve Low/Medium-risk changes (see change log) | C | C | R | A | C | C | C |
+| Approve High-risk changes: business sign-off (see change log) | A | C | R | C | C | C | C |
+| Approve High-risk changes: MI Lead sign-off (see change log) | I | C | R | A | C | C | C |
+| Retire the report: business sign-off (see playbook) | A | C | R | C | C | C | C |
+| Retire the report: MI Lead sign-off (see playbook) | I | C | R | A | C | C | C |
+
+High-risk changes and retirements need **both** sign-offs, recorded as separate rows so each keeps one A.
 
 Where one person holds several roles, record it and note the single-point-of-failure risk.
 

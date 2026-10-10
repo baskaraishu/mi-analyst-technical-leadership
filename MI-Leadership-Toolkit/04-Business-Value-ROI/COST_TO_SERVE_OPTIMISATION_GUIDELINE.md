@@ -1,6 +1,6 @@
 # Cost-to-Serve / Compute Optimisation Guideline
 
-> **Status:** Reusable guideline. This project runs locally on a very small synthetic dataset; it has no measured cloud cost and makes no savings claim. Template figures are blanks to fill with real measurements.
+> **Status:** Reusable guideline. Implementation-neutral: sources below are examples to map to your own pipeline (for `MI-Technical-Project`: run logs, BigQuery job statistics and table sizes). It contains no measured cost and makes no savings claim. Template figures are blanks to fill with real measurements.
 
 Optimise only after measuring, and never at the expense of controls: reconciliation, quality gating, auditability and traceability are not optional savings.
 
@@ -18,8 +18,8 @@ Optimise only after measuring, and never at the expense of controls: reconciliat
 
 | Area | Measure | Source |
 |---|---|---|
-| Compute | Wall-clock time per stage and per run | `pipeline_summary.json` |
-| Storage | Size of Bronze, Silver, quarantine, Gold and report folders per run | File system |
+| Compute | Wall-clock time per stage and per run; query bytes processed in a warehouse | Run logs / job statistics |
+| Storage | Size of raw, staging, quarantine and published outputs per run | File system or warehouse table sizes |
 | Data volume | Input rows, columns, retained runs | Ingestion metadata |
 | Effort | Analyst hours for run, review, investigation | Time log |
 | Rework | Reruns due to blocked gate or source defects | Run history |
@@ -38,7 +38,7 @@ State the unit rates and assumptions used. Leave unknown values blank rather tha
 | Option | Possible benefit | Control to keep | Check |
 |---|---|---|---|
 | Process only new or changed months | Less compute | Still reconcile the full reporting period | Totals match full run |
-| Columnar storage (Parquet) for Gold | Smaller, faster | Schema documented | Values equal prior output |
+| Columnar storage (Parquet) for published outputs | Smaller, faster | Schema documented | Values equal prior output |
 | Run heavy profiling only when source changes | Less compute | Profile available when investigating a blocked gate | Gate evidence retained |
 | Prune superseded run outputs | Lower storage | Keep runs needed for audit and release evidence | Retention rule applied |
 | Cache reference data | Faster stages | Reference changes invalidate cache | Linked to change log |

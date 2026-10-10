@@ -23,7 +23,7 @@ Retire a report because it is no longer needed, duplicated or unsafe—not merel
 | 2. Assess usage | Review access and distribution over a full reporting cycle | Usage summary | Analyst |
 | 3. Assess dependencies | Find downstream reports, extracts, spreadsheets, KPIs and audits relying on it | Dependency list | Analyst / Tech Support |
 | 4. Consult | Ask users and data owner which decisions are affected and what alternative they need | Consultation record | Report Owner |
-| 5. Decide | Approve, defer or reject, with conditions | Signed decision | Report Owner |
+| 5. Decide | Approve, defer or reject, with conditions. Retirement is High risk, so both Report Owner and MI Lead sign off | Signed decision | Report Owner (business) and MI Lead |
 | 6. Communicate | Notify users with date, replacement and contact | Notice | Analyst |
 | 7. Freeze | Stop refresh; label as retired; keep read access during grace period | Frozen report | Tech Support |
 | 8. Archive | Preserve definitions, final outputs, run evidence and decision per retention rule | Archive record | Data Steward |
@@ -32,7 +32,7 @@ Retire a report because it is no longer needed, duplicated or unsafe—not merel
 
 ## 3. Pre-Retirement Checklist
 
-- [ ] Report Owner approval recorded.
+- [ ] Report Owner and MI Lead approvals both recorded (High risk per the change log).
 - [ ] Usage evidence covers at least one full reporting cycle.
 - [ ] Dependencies identified and resolved or accepted.
 - [ ] Replacement or alternative communicated, if any.
@@ -43,12 +43,12 @@ Retire a report because it is no longer needed, duplicated or unsafe—not merel
 
 ## 4. Archive Contents
 
-For a pipeline-based report such as this project, preserve as policy allows:
+For a pipeline-based report, preserve as policy allows (names vary by pipeline; for `MI-Technical-Project` use its run logs, data-quality report, `src/config.py` version and BigQuery destination table):
 
-- Run ID, source hash and `pipeline_summary.json`.
-- Quality-gate result and reconciliation summary.
-- KPI mapping and rule versions used.
-- Final Gold output or its documented location.
+- Run identifier and source reference or hash.
+- Run logs and quality-check results.
+- KPI definitions and rule/threshold versions used.
+- Final published output or its documented location.
 - Retirement decision and approvals.
 
 ## 5. Retirement Request Template
@@ -66,7 +66,7 @@ For a pipeline-based report such as this project, preserve as policy allows:
 | Proposed freeze / removal dates | |
 | Risks and mitigations | |
 | Decision (Approve / Defer / Reject) | |
-| Approved by and date | |
+| Approved by (Report Owner and MI Lead) and date | |
 
 ## 6. Common Risks
 

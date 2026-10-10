@@ -1,8 +1,8 @@
 # Change Management & Impact Assessment (Change Request Log)
 
-> **Status:** Reusable template. The example entry is a hypothetical change to this synthetic project, not a record of an approved change.
+> **Status:** Reusable, implementation-neutral template. The example entry is hypothetical, not a record of an approved change. File names are placeholders: map them to where your pipeline keeps rules and thresholds (in `MI-Technical-Project`: `src/data_quality.py` for checks, `src/config.py` for thresholds, `tests/` for tests).
 
-Use this log for any change to KPI definitions, validation rules, gate thresholds, cleaning policies, reference data, source feeds or published outputs. Rules and thresholds here are YAML-driven, so changes should be traceable, reviewed and tested.
+Use this log for any change to KPI definitions, validation rules, quality thresholds, cleaning policies, reference data, source feeds or published outputs. Changes should be traceable, reviewed and tested.
 
 ---
 
@@ -25,7 +25,7 @@ Use this log for any change to KPI definitions, validation rules, gate threshold
 | Does it alter historic comparability? Restate or annotate? | |
 | Which reports, users and extracts are affected? | |
 | Does it change quality-gate outcomes or DQ scores? | |
-| Which files change? (e.g., `rules/quality_rules.yml`, `rules/kpi_mappings.yml`, `rules/quality_gate.yml`, `docs/data_dictionary.md`) | |
+| Which files change? (e.g., validation code, configuration or threshold files, KPI definitions, data dictionary) | |
 | Are documentation and assumptions updated? | |
 | What tests prove it works, and what could regress? | |
 | What is the rollback route? | |
@@ -43,7 +43,7 @@ Use this log for any change to KPI definitions, validation rules, gate threshold
 
 | ID | Raised | Requester | Description | Reason | Files / outputs affected | Impact summary | Risk | Approver(s) | Tests / evidence | Effective | Status |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| CR-001 | YYYY-MM-DD | | *Example:* add a configured consistency rule so the Consistency dimension can be scored | Dimension currently not available | `rules/quality_rules.yml`, `tests/` | DQ score may change; some records may newly fail | Medium | | New tests; before/after run comparison | | Proposed |
+| CR-001 | YYYY-MM-DD | | *Example:* add a configured consistency rule so the Consistency dimension can be scored | Dimension currently not available | Validation rule configuration, `tests/` | DQ score may change; some records may newly fail | Medium | | New tests; before/after run comparison | | Proposed |
 
 **Status values:** Proposed · Under assessment · Approved · Rejected · Testing · Released · Rolled back · Closed.
 
