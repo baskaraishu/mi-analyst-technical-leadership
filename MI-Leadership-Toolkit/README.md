@@ -42,12 +42,3 @@ Use this folder as a **portfolio asset** when interviewing for MI, Analytics, or
 For evaluating whether an MI-informed business action achieved its intended outcome, start with [`MI_INTERVENTION_MEASUREMENT_FRAMEWORK.md`](./04-Business-Value-ROI/MI_INTERVENTION_MEASUREMENT_FRAMEWORK.md).
 
 ---
-
-## 3. Relationship to the Technical Project
-
-This toolkit sits alongside the **crypto price ETL project** in this repo:
-
-- The technical project shows you can **design and implement** an end-to-end MI solution (from API to BigQuery to BI).
-- The MI Leadership Toolkit shows you can **govern, scale, and extract value** from such solutions in a real organisation.
-
-Together, they present a **rounded MI / Analytics portfolio**: strong hands-on skills paired with a clear, strategic leadership narrative.

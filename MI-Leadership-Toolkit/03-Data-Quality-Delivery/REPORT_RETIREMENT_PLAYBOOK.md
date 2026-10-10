@@ -43,7 +43,7 @@ Retire a report because it is no longer needed, duplicated or unsafe—not merel
 
 ## 4. Archive Contents
 
-For a pipeline-based report, preserve as policy allows (names vary by pipeline; for `MI-Technical-Project` use its run logs, data-quality report, `src/config.py` version and BigQuery destination table):
+For a pipeline-based report, preserve as policy allows (names vary by pipeline, e.g. run logs, data-quality report, configuration version and destination table):
 
 - Run identifier and source reference or hash.
 - Run logs and quality-check results.

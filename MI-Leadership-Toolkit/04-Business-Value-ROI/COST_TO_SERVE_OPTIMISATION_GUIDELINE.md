@@ -1,6 +1,6 @@
 # Cost-to-Serve / Compute Optimisation Guideline
 
-> **Status:** Reusable guideline. Implementation-neutral: sources below are examples to map to your own pipeline (for `MI-Technical-Project`: run logs, BigQuery job statistics and table sizes). It contains no measured cost and makes no savings claim. Template figures are blanks to fill with real measurements.
+> **Status:** Reusable guideline. Implementation-neutral: sources below are examples to map to your own pipeline. It contains no measured cost and makes no savings claim. Template figures are blanks to fill with real measurements.
 
 Optimise only after measuring, and never at the expense of controls: reconciliation, quality gating, auditability and traceability are not optional savings.
 

@@ -1,6 +1,6 @@
 # Stakeholder RACI Matrix Template: Report Ownership
 
-> **Status:** Reusable, implementation-neutral template. Roles and assignments are illustrative; they are not an MoJ/HMPPS organisation chart. Agree real roles with the service before use. Evidence fields are placeholders: map them to your pipeline's own artefacts (for `MI-Technical-Project`: run logs, the data-quality report, `src/config.py` thresholds and the BigQuery destination table).
+> **Status:** Reusable, implementation-neutral template. Roles and assignments are illustrative; they are not an MoJ/HMPPS organisation chart. Agree real roles with the service before use. Evidence fields are placeholders: map them to your pipeline's own artefacts.
 
 Clear ownership prevents a report being trusted by many and owned by no one. Use one RACI per report or data product.
 

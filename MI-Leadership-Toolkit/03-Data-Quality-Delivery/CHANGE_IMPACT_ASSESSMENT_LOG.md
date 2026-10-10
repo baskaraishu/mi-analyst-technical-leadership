@@ -1,6 +1,6 @@
 # Change Management & Impact Assessment (Change Request Log)
 
-> **Status:** Reusable, implementation-neutral template. The example entry is hypothetical, not a record of an approved change. File names are placeholders: map them to where your pipeline keeps rules and thresholds (in `MI-Technical-Project`: `src/data_quality.py` for checks, `src/config.py` for thresholds, `tests/` for tests).
+> **Status:** Reusable, implementation-neutral template. The example entry is hypothetical, not a record of an approved change. File names are placeholders: map them to where your pipeline keeps rules and thresholds.
 
 Use this log for any change to KPI definitions, validation rules, quality thresholds, cleaning policies, reference data, source feeds or published outputs. Changes should be traceable, reviewed and tested.
 
