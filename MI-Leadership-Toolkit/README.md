@@ -16,13 +16,13 @@ Use this folder as a **portfolio asset** when interviewing for MI, Analytics, or
   Principles, maturity models, and governance artefacts that show how you design a trustworthy MI ecosystem.
 
 - **02-Stakeholder-Operations**  
-  Templates and frameworks for gathering requirements, improving data literacy, and managing a report catalogue.
+  Templates and frameworks for gathering requirements, improving data literacy, managing a report catalogue, and assigning report ownership (`RACI_REPORT_OWNERSHIP.md`).
 
 - **03-Data-Quality-Delivery**  
-  Checklists, anomaly logs, ETL standards, and RCA templates that prove you can run **reliable MI operations**.
+  Checklists, anomaly logs, ETL standards, and RCA templates that prove you can run **reliable MI operations**, plus change control (`CHANGE_IMPACT_ASSESSMENT_LOG.md`) and report retirement (`REPORT_RETIREMENT_PLAYBOOK.md`).
 
 - **04-Business-Value-ROI**  
-  Case studies and frameworks for linking MI to **tangible business outcomes**, including GenAI acceleration and BI adoption metrics.
+  Case studies and frameworks for linking MI to **tangible business outcomes**, including intervention measurement, GenAI acceleration, BI adoption metrics, and cost-to-serve (`COST_TO_SERVE_OPTIMISATION_GUIDELINE.md`).
 
 - **05-Practical-Data-Templates**  
   Practical SQL, dashboard wireframes, and audit logs that show how you operationalise good practice.
@@ -37,6 +37,9 @@ Use this folder as a **portfolio asset** when interviewing for MI, Analytics, or
   - Manage stakeholders and expectations.  
   - Ensure data quality and incident handling.  
   - Prove business impact and drive adoption.
+  - Evaluate interventions with a documented baseline, comparison, decision rule, and limitations.
+
+For evaluating whether an MI-informed business action achieved its intended outcome, start with [`MI_INTERVENTION_MEASUREMENT_FRAMEWORK.md`](./04-Business-Value-ROI/MI_INTERVENTION_MEASUREMENT_FRAMEWORK.md).
 
 ---
 
